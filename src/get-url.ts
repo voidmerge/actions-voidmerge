@@ -14,10 +14,10 @@ export function getURL(os: string, version: string): string {
     }
   }
 
-  const voidmergeName: string = `voidmerge-v${version}-${architecture(os)}-${os}`;
+  const voidmergeName: string = `voidmerge-${version}-${architecture(os)}-${os}`;
   const baseURL: string =
     'https://github.com/voidmerge/voidmerge/releases/download';
-  const url: string = `${baseURL}/v${version}/${voidmergeName}.${ext(os)}`;
+  const url: string = `${baseURL}/${version}/${voidmergeName}.${ext(os)}`;
 
   return url;
 }
