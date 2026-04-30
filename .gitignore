@@ -1,0 +1,9 @@
+/explain.md
+
+lib
+
+.DS_Store
+coverage
+.npm
+.eslintcache
+node_modules
