@@ -23,7 +23,7 @@ export async function createTempDir(baseLocation: string): Promise<string> {
   let tempDir: string = process.env['RUNNER_TEMPDIRECTORY'] || '';
 
   if (tempDir === '') {
-    tempDir = path.join(baseLocation, 'tmp');
+    tempDir = path.join(baseLocation, 'toolbin');
   }
 
   await io.mkdirP(tempDir);
