@@ -1,6 +1,5 @@
 import { getURL, getLatestVersion } from '../src/get-latest-version';
 import nock from 'nock';
-import jsonTestBrew from './data/brew.json';
 import jsonTestGithub from './data/github.json';
 
 beforeEach(() => {
@@ -11,32 +10,20 @@ afterEach(() => {
   nock.cleanAll();
 });
 
-const org: string = 'rust-lang';
-const repo: string = 'mdbook';
-// const urlBrewExpected: string = `https://formulae.brew.sh/api/formula/${repo}.json`;
+const org: string = 'voidmerge';
+const repo: string = 'voidmerge';
 const urlGithubExpected: string = `https://api.github.com/repos/${org}/${repo}/releases/latest`;
 
 describe('getURL()', () => {
   test('return expected URL', () => {
-    // const urlBrew: string = getURL(org, repo, 'brew');
     const urlGithub: string = getURL(org, repo, 'github');
 
-    // expect(urlBrew).toMatch(urlBrewExpected);
     expect(urlGithub).toMatch(urlGithubExpected);
   });
 });
 
 describe('getLatestVersion()', () => {
-  let versionLatestExpected: string = '0.3.5';
-
-  // test('return latest version via brew', async () => {
-  //   nock('https://formulae.brew.sh')
-  //     .get(`/api/formula/${repo}.json`)
-  //     .reply(200, jsonTestBrew);
-
-  //   const versionLatest: string = await getLatestVersion(org, repo, 'brew');
-  //   expect(versionLatest).toMatch(versionLatestExpected);
-  // });
+  let versionLatestExpected: string = '0.0.25';
 
   test('return latest version via GitHub', async () => {
     nock('https://api.github.com')

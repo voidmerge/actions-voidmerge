@@ -53,7 +53,7 @@ export async function run(): Promise<any> {
     };
 
     if (toolVersion === '' || toolVersion === 'latest') {
-      installVersion = String(await getLatestVersion('rust-lang', 'voidmerge', 'github'));
+      installVersion = String(await getLatestVersion('voidmerge', 'voidmerge', 'github'));
     } else {
       installVersion = toolVersion;
     }

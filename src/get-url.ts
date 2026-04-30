@@ -14,7 +14,6 @@ export function getURL(os: string, version: string): string {
     }
   }
 
-  // const mdbookName: string = `mdbook-v${version}-x86_64-${os}`;
   const voidmergeName: string = `voidmerge-v${version}-${architecture(os)}-${os}`;
   const baseURL: string =
     'https://github.com/voidmerge/voidmerge/releases/download';
