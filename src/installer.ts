@@ -53,13 +53,13 @@ export async function installer(version: string) {
       toolAssets,
       tempDir
     );
-    toolBin = `${toolExtractedFolder}/voidmerge.exe`;
+    toolBin = `${toolExtractedFolder}/vm.exe`;
   } else {
     const toolExtractedFolder: string = await tc.extractTar(
       toolAssets,
       tempDir
     );
-    toolBin = `${toolExtractedFolder}/voidmerge`;
+    toolBin = `${toolExtractedFolder}/vm`;
   }
   await io.mv(toolBin, toolPath);
 }
