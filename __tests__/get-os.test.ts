@@ -1,4 +1,5 @@
-import {getOS} from '../src/get-os';
+import { getOS } from '../src/get-os';
+import { describe, expect, test } from '@jest/globals';
 
 describe('getOS()', () => {
   test('return expected OS name', () => {

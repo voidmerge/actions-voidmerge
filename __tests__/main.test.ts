@@ -2,6 +2,7 @@ import * as main from '../src/main';
 import nock from 'nock';
 import { FetchError } from 'node-fetch';
 import jsonTestGithub from './data/github.json';
+import { afterEach, beforeEach, describe, expect, jest, test } from '@jest/globals';
 
 jest.setTimeout(30000);
 const repo: string = 'voidmerge';

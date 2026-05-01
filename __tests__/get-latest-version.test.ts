@@ -1,6 +1,7 @@
 import { getURL, getLatestVersion } from '../src/get-latest-version';
 import nock from 'nock';
 import jsonTestGithub from './data/github.json';
+import { afterEach, beforeEach, describe, expect, jest, test } from '@jest/globals';
 
 beforeEach(() => {
   jest.resetModules();
