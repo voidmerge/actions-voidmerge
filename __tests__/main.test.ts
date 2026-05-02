@@ -33,16 +33,15 @@ describe('Integration testing run()', () => {
     expect(result.output).toContain(`voidmerge ${testVersion}`);
   });
 
-  // test('succeed in installing the latest version', async () => {
-  //   const testVersion: string = 'latest';
-  //   process.env['INPUT_VOIDMERGE-VERSION'] = testVersion;
-  //   https://api.github.com/repos/${org}/${repo}/releases/latest
-  //   nock('https://api.github.com')
-  //     .get(`/repos/${org}/${repo}/releases/latest`)
-  //     .reply(200, jsonTestGithub);
-  //   const result: main.actionResult = await main.run();
-  //   expect(result.output).toMatch('vm v0.0.25');
-  // });
+  test('succeed in installing the latest version', async () => {
+    const testVersion: string = 'latest';
+    process.env['INPUT_VOIDMERGE-VERSION'] = testVersion;
+    nock('https://api.github.com')
+      .get(`/repos/${org}/${repo}/releases/latest`)
+      .reply(200, jsonTestGithub);
+    const result: main.actionResult = await main.run();
+    expect(result.output).toContain('voidmerge 0.0.25');
+  });
 
   // if (process.platform === 'linux') {
   //   test('fail to install a custom version due to 404 of tarball', async () => {
