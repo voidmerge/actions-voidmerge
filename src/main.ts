@@ -52,6 +52,7 @@ export async function run(): Promise<any> {
       output: ''
     };
 
+    core.info(`requested voidmerge version: ${toolVersion}`);
     if (toolVersion === '' || toolVersion === 'latest') {
       installVersion = String(await getLatestVersion('voidmerge', 'voidmerge', 'github'));
     } else {

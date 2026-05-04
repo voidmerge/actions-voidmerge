@@ -11,6 +11,6 @@ describe('getOS()', () => {
   test('return exception', () => {
     expect(() => {
       getOS('centos');
-    }).toThrowError('centos is not supported');
+    }).toThrow('centos is not supported');
   });
 });
