@@ -1,38 +1,3 @@
-// jest.mock('@actions/core', () => ({
-//   getInput: jest.fn((name: string) => process.env['INPUT_VOIDMERGE-VERSION'] || ''),
-//   info: jest.fn(),
-//   debug: jest.fn(),
-//   setFailed: jest.fn(),
-//   addPath: jest.fn()
-// }));
-
-// jest.mock('@actions/exec', () => {
-//   const actualExec = jest.requireActual('@actions/exec') as typeof import('@actions/exec');
-//   return {
-//     exec: jest.fn(async (cmd: string, args: string[], options: any) => {
-//       if (cmd === 'vm') {
-//         if (options?.listeners?.stdout) {
-//           options.listeners.stdout(Buffer.from('voidmerge 0.0.25'));
-//         }
-//         return 0;
-//       }
-//       return actualExec.exec(cmd, args, options);
-//     })
-//   };
-// });
-
-// jest.mock('@actions/tool-cache', () => ({
-//   downloadTool: jest.fn(async () => 'toolAssetsPath'),
-//   extractZip: jest.fn(async () => 'toolExtractedFolder'),
-//   extractTar: jest.fn(async () => 'toolExtractedFolder')
-// }));
-
-// jest.mock('@actions/io', () => ({
-//   mkdirP: jest.fn(async () => { }),
-//   mv: jest.fn(async () => { }),
-//   which: jest.fn(async () => 'git')
-// }));
-
 import * as main from '../src/main';
 import nock from 'nock';
 import jsonTestGithub from './data/github.json';
