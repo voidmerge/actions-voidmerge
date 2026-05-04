@@ -1,6 +1,7 @@
 /explain.md
 
-lib
+lib/*
+!lib/index.js
 
 .DS_Store
 coverage
